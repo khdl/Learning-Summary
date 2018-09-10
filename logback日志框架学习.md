@@ -159,12 +159,8 @@ TRACE < DEBUG < INFO < WARN < ERROR
 	import ch.qos.logback.classic.Level;
 	
 	/**
-	 *
-	 *
-	 * @author beanlam
 	 * @date 2017年2月10日 上午12:20:33
 	 * @version 1.0
-	 *
 	 */
 	public class LogLevelDemo {
 	
@@ -272,6 +268,7 @@ logback 提供的配置方式有以下几种:
 - 编程式配置
 - xml 格式
 - groovy 格式
+
 
 logback 在启动时，根据以下步骤寻找配置文件：
 
@@ -425,7 +422,7 @@ FileAppender:把日志添加到文件
     <encoder>  
       <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>  
     </encoder>  
-  </appender>  
+    </appender>  
 
 
 RollingFileAppender：滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件。
