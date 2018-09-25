@@ -1,11 +1,14 @@
 # Spring  事物
+
 ### 事物的配置方式
+
 Spring配置文件中关于事务配置总是由三个组成部分，分别是DataSource、TransactionManager和代理机制这三部分，无论哪种配置方式，一般变化的只是代理机制这部分
 
  DataSource、TransactionManager这两部分只是会根据数据访问方式有所变化，比如使用hibernate进行数据访问时，DataSource实际为SessionFactory，TransactionManager的实现为HibernateTransactionManager
 
 
 ### 每个Bean都有一个代理
+
 	 <?xml version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
 	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -53,7 +56,8 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 
 ### 所有Bean共享一个代理基类
 
-	  <?xml version="1.0" encoding="UTF-8"?>
+
+	<?xml version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
 	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	    xmlns:context="http://www.springframework.org/schema/context"
@@ -100,8 +104,8 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 	</beans>
 
 
+### 使用拦截器
 
-###使用拦截器
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
@@ -154,7 +158,8 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 	    <bean id="userDao" class="com.bluesky.spring.dao.UserDaoImpl">        <property name="sessionFactory" ref="sessionFactory" />    </bean></beans>
 
 
-###使用tx标签配置的拦截器
+### 使用tx标签配置的拦截器
+
 	<?xml version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
 	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -199,6 +204,7 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 
 ### 全注解
 
+
 	<?xml version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
 	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -234,6 +240,7 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 
 
 ## 事务隔离等级
+
 1、Serializable：最严格的级别，事务串行执行，资源消耗最大；
 
 2、REPEATABLE READ：保证了一个事务不会修改已经由另一个事务读取但未提交（回滚）的数据。避免了“脏读取”和“不可重复读取”的情况，但是带来了更多的性能损失。
@@ -243,6 +250,7 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 4、Read Uncommitted：保证了读取过程中不会读取到非法数据。隔离级别在于处理多事务的并发问题。
 
 ### 读数据问题
+
 1： Dirty reads--读脏数据。也就是说，比如事务A的未提交（还依然缓存）的数据被事务B读走，如果事务A失败回滚，会导致事务B所读取的的数据是错误的。
 
 2： non-repeatable reads--数据不可重复读。比如事务A中两处读取数据-total-的值。在第一读的时候，total是100，然后事务B就把total的数据改成 200，事务A再读一次，结果就发现，total竟然就变成200了，造成事务A数据混乱。
@@ -251,10 +259,10 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 
 	
 		             Dirty reads	non-repeatable reads	phantom reads
-	Serializable	    不会	              不会	            不会
-	REPEATABLE READ	    不会	              不会	            会
-	READ COMMITTED	    不会	              会	                会
-	Read Uncommitted	会	              会	                会
+	Serializable	    不会	              不会	               不会
+	REPEATABLE READ	    不会	              不会	               会
+	READ COMMITTED	    不会	              会	                    会
+	Read Uncommitted	会	               会	                 会
 
 
 
