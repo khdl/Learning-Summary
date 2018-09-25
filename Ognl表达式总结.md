@@ -7,10 +7,12 @@
 	  public static void setValue( Object tree, Map context, Object root, Object value ) throws OgnlException
 
 ### Ognl 基本介绍
+
   - OGNL可以让我们用非常简单的表达式访问对象层，例如，当前环境的根对象为user1，则表达式person.address[0].province可以访问到user1的person属性的第一个address的province属性。
   - webwork2和现在的Struts2.x中使用OGNL取代原来的EL来做界面数据绑定，所谓界面数据绑定，也就是把界面元素（例如一个textfield,hidden)和对象层某个类的某个属性绑定在一起，修改和显示自动同步。
   - 和struts1.x的formbean相比，这样做的好处非常明显：在webwork中不需要为每个页面专门写formbean，可以直接利用对象层的对象。例如在对象设计中，我们的User和Person是分开的，而一个注册用户界面需要填写两者的内容，在webwork中，就可以保持后台的对象结构，把属于用户属性的界面元素用user.person.xxx绑定，把属于账号属性的界面元素用user.xxx绑定。
 ###Ognl 重要的3个符号：#、%、$
+
  "#"主要有三种用途：
 
   - 访问非根对象属性，例如#session.msg表达式，由于Struts 2中值栈被视为根对象，所以访问其他非根对象时，需要加#前缀。实际上，#相当于ActionContext. getContext()；#session.msg表达式相当于ActionContext.getContext().getSession(). getAttribute("msg") 。
@@ -25,6 +27,7 @@
   - 在Struts 2框架的配置文件中引用OGNL表达式
 
 ###Ognl 与 Struts2 
+
   - OGNL表达式的计算是围绕OGNL上下文进行的。
    OGNL上下文实际上就是一个Map对象，由ognl.OgnlContext类表示。它里面可以存放很多个JavaBean对象。它有一个上下文根对象。上下文中的根对象可以直接使用名来访问或直接使用它的属性名访问它的属性值。否则要加前缀“#key”。
   - Struts2的标签库都是使用OGNL表达式来访问ActionContext中的对象数据的。如：<s:propertyvalue="xxx"/>。
@@ -34,6 +37,7 @@
   - 调用ActionContext的put(key,value)放入的数据，需要使用#访问。
 
 ### MyBatis中的OGNL
+
   MyBatis中可以使用OGNL的地方有两处：
 
   1.     动态SQL表达式中
