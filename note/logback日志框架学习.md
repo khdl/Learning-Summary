@@ -360,12 +360,13 @@ logback-test.xml 一般用来在测试代码中打日志，如果是 maven 项�
 ### 配置文件的基本结构
 
 ![](https://i.imgur.com/ZOFPhTY.jpg)    
+
 根节点是 configuration，可包含0个或多个 appender，0个或多个 logger，最多一个 root。
 
 
 ### 配置 logger 节点
-    <loger>：用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>
-	用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。<loger>仅有一个name属性，一个可选的level和一个可选的addtivity属性。
+
+    <loger>：用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。<loger>仅有一个name属性，一个可选的level和一个可选的addtivity属性。
 		name:用来指定受此loger约束的某一个包或者具体的某一个类。
 		level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特俗值INHERITED或者同义词NULL，代表强制执行上级的级别。
 		如果未设置此属性，那么当前loger将会继承上级的级别。
