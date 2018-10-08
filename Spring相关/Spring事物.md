@@ -155,7 +155,10 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 	    </bean> 
 	 
 	    <!-- 配置DAO -->
-	    <bean id="userDao" class="com.bluesky.spring.dao.UserDaoImpl">        <property name="sessionFactory" ref="sessionFactory" />    </bean></beans>
+	   <bean id="userDao" class="com.bluesky.spring.dao.UserDaoImpl"> 
+            <property name="sessionFactory" ref="sessionFactory" />    
+       </bean>
+       </beans>
 
 
 ### 使用tx标签配置的拦截器
