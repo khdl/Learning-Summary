@@ -156,7 +156,7 @@ Spring配置文件中关于事务配置总是由三个组成部分，分别是Da
 	 
 	    <!-- 配置DAO -->
 	   <bean id="userDao" class="com.bluesky.spring.dao.UserDaoImpl"> 
-            <property name="sessionFactory" ref="sessionFactory" />    
+             <property name="sessionFactory" ref="sessionFactory" />    
        </bean>
        </beans>
 
