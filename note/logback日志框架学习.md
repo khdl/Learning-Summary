@@ -240,7 +240,7 @@ logger.debug("the message {} is from {}", msg, somebody);
 ### logback 内部运行流程
 
 
-![](https://i.imgur.com/ahY0IKr.gif)
+![](https://github.com/khdl/img/blob/master/Learning-Summary/ahY0IKr.gif)
 
 当应用程序发起一个记录日志的请求，例如 info() 时，logback 的内部运行流程如上所示：
 
