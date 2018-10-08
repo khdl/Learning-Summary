@@ -239,8 +239,7 @@ logger.debug("the message {} is from {}", msg, somebody);
 
 ### logback 内部运行流程
 
-
-![](https://github.com/khdl/img/blob/master/Learning-Summary/ahY0IKr.gif)
+![](img/ahY0IKr.gif)
 
 当应用程序发起一个记录日志的请求，例如 info() 时，logback 的内部运行流程如上所示：
 
@@ -460,6 +459,7 @@ RollingFileAppender：滚动记录文件，先将日志记录到指定文件，�
 	 </logger>
 
 ### filter:过滤器
+
    执行一个过滤器会有返回个枚举值，即DENY，NEUTRAL，ACCEPT其中之一。返回DENY，日志将立即被抛弃不再经过其他过滤器；返回NEUTRAL，有序列表里的下个过滤器过接着处理日志；返回ACCEPT，日志会被立即处理，不再经过剩余过滤器。
    过滤器被添加到<Appender> 中，为<Appender> 添加一个或多个过滤器后，可以用任意条件对日志进行过滤。<Appender> 有多个过滤器时，按照配置顺序执行。
    LevelFilter： 级别过滤器，根据日志级别进行过滤。如果日志级别等于配置级别，过滤器会根据onMath 和 onMismatch接收或拒绝日志
