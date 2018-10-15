@@ -18,7 +18,7 @@
 
 能够显示地获取和释放锁，锁的运用更灵活，可以方便地实现公平锁，能够响应中断，非阻塞获取锁
 
-java.util.concurrent.locks包下面ReadWriteLock接口,该接口下面的实现类ReentrantReadWriteLock维护了两个锁读锁和解锁，可用该类实现这个功能。
+java.util.concurrent.locks包下面ReadWriteLock接口,该接口下面的实现类ReentrantReadWriteLock维护了两个锁读锁和写锁，可用该类实现这个功能。
 
     //读写锁
 	private static ReadWriteLock rwLock = new ReentrantReadWriteLock();
@@ -32,7 +32,7 @@ java.util.concurrent.locks包下面ReadWriteLock接口,该接口下面的实现�
 
 sleep()方法属于Thread类中的,wait()方法属于Object类中的。在等待时wait会释放锁，而sleep一直持有锁。Wait通常被用于线程间交互，sleep通常被用于暂停执行。
 
-### ）用Java实现阻塞队列
+### 用Java实现阻塞队列
 
 阻塞队列的实现原理，事实它和我们用 Object.wait()、Object.notify()和非阻塞队列实现生产者-消费者的思路类似，只不过它把这些工作一起集成到了阻塞队列中实现。
 
