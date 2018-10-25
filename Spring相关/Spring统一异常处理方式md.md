@@ -37,7 +37,7 @@ HandlerExceptionResolver接口
 
 ###  ControllerAdvice
 
-义一个存放异常处理函数的类，并使用@ControllerAdvice修饰.
+定义一个存放异常处理函数的类，并使用@ControllerAdvice修饰.
 
 	@ControllerAdvice(assignableTypes = {GlobalExceptionHandlerMixin.class})
 	public class ExceptionAdvice {
