@@ -68,7 +68,7 @@ volatile不能保证操作的原子性。synchronized可以保证操作的原子
 
 线程遇到了IO阻塞，我并且不认为有一种方法可以中止线程。如果线程因为调用wait()、sleep()、或者join()方法而导致的阻塞，你可以中断线程，并且通过抛出InterruptedException来唤醒它
 
-### 在Java中CycliBarriar和CountdownLatch有什么区别？
+### 在Java中CycliBarriar和CountdownLatch有什么区别
 
 CyclicBarrier可以重复使用已经通过的障碍，而CountdownLatch不能重复使用。
 
