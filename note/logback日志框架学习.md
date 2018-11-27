@@ -199,7 +199,7 @@ TRACE < DEBUG < INFO < WARN < ERROR
 ### Appender 和 Layout
 日志信息不仅仅可以打印至 console，也可以打印至文件，甚至输出到网络流中，日志打印的目的地由 Appender 来决定，不同的 Appender 能将日志信息打印到不同的目的地去。
 
-Appender 是绑定在 logger 上的，同时，一个 logger 可以绑定多个 Appender，意味着一条信息可以同时打印到不同的目的地去。例如，常见的做法是，日志信息既输出到控制台，同时也记录到日志文件中，这就需要为 logger 绑定两个不同的 logger。
+Appender 是绑定在 logger 上的，同时，一个 logger 可以绑定多个 Appender，意味着一条信息可以同时打印到不同的目的地去。例如，常见的做法是，日志信息既输出到控制台，同时也记录到日志文件中，这就需要为 logger 绑定两个不同的 Appender。
 
 Appender 是绑定在 logger 上的，而 logger 又有继承关系，因此一个 logger 打印信息时的目的地 Appender 需要参考它的父亲和祖先。在 logback 中，默认情况下，如果一个 logger 打印一条信息，那么这条信息首先会打印至它自己的 Appender，然后打印至它的父亲和父亲以上的祖先的 Appender，但如果它的父亲设置了 additivity = false，那么这个 logger 除了打印至它自己的 Appender 外，只会打印至其父亲的 Appender，因为它的父亲的 additivity 属性置为了 false，开始变得忘祖忘宗了，所以这个 logger 只认它父亲的 Appender；此外，对于这个 logger 的父亲来说，如果父亲的 logger 打印一条信息，那么它只会打印至自己的 Appender中（如果有的话），因为父亲已经忘记了爷爷及爷爷以上的那些父辈了。
 
@@ -260,8 +260,10 @@ logger.debug("the message {} is from {}", msg, somebody);
 - 在 logback 中，将日志信息格式化，以及输出到目的地，是最损耗性能的操作
 
 
-## logback 配置
+# logback 配置
+
 ### 配置方式
+
 logback 提供的配置方式有以下几种:
 
 - 编程式配置
