@@ -18,7 +18,7 @@ Spring中的FactoryBean就是典型的工厂方法模式。如下图：
 
 保证一个类仅有一个实例，并提供一个访问它的全局访问点。
 
-Spring中的单例模式完成了后半句话，即提供了全局的访问点BeanFactory。但没有从构造器级别去控制单例，这是因为Spring管理的是是任意的Java对象。
+Spring中的单例模式完成了后半句话，即提供了全局的访问点BeanFactory。但没有从构造器级别去控制单例，这是因为Spring管理的是任意的Java对象。
 
 ###  适配器（Adapter）
 

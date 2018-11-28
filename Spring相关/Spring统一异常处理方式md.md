@@ -31,7 +31,7 @@ HandlerExceptionResolver接口
 
 
  @ExceptionHandler注解
-这种异常处理只局部于某个Controller内。，它还能够对异常类型进行细粒度的控制，通过注解可以有选择的指定异常处理方法应用的异常类型：
+这种异常处理只局部于某个Controller内。它还能够对异常类型进行细粒度的控制，通过注解可以有选择的指定异常处理方法应用的异常类型：
 
 		@ExceptionHandler({BusinessException.class, DataBaseError.class })
 
