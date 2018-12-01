@@ -38,8 +38,19 @@ oracle定义表别名的时候不能使用as。
 sqlserver和oracel 支持窗口函数：ROW_NUMBER(): 用法ROW_NUMBER() OVER(规则)</br>
 oracle虽然支持ROW_NUMBER()，但提供了更方便的特性来计算行号。Oracle为每个结果集都增加了一个默认表示行号的列，这个列的名称为rownum。**注意rownum是结果集的行号**</br>
 
+distinct 是对整个结果集进行数据重复抑制的</br>
+查询中设置常量字段</br>
 
+oracle：获取字段长度函数LENGTH(),截取字符串的长度函数SUBSTR()</br>
+函数可以嵌套使用，不同数据库提供的函数差异非常大</br>
 
+所有的数据库都支持字符串用单引号包围，有些数据库的双引号有其它含义(比如列的别名)</br>
 
+mysql使用CONCAT()函数来拼接字符串，它的 **+** 号会转换成整形(转换失败默认为0)进行计算，sqlserver使用 **+** 号，oracle支持使用 **||** 和CONTAC()函数（oracel中最多只支持两个参数，但可以函数嵌套）进行字符串的拼接。
 
+Update T_User set **age = age+1**</br>
 
+mysql和SqlServer允许使用不带from字句的select语句来查询不属于任何实体表的数据：select 1；还可以在不带from字句中使用函数</br>
+oracel不允许使用这种不带任何from字句的select语句，不过可以使用oracel的系统表来作为from字句中的表名，最常用的系统表为DUAl：select 1,LENGTH('abc')  from dual;</br>
+
+UNION去重了，UNION ALl 不去重
