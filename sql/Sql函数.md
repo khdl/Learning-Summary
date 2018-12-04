@@ -9,14 +9,14 @@
  - 正弦、余弦、正切、余切、求符号、求自然对数等</br></br>
 
 2. 字符串函数
-  - 字符串长度：LENGTH(),oracel为LEN()
+  - 字符串长度：LENGTH()
   - 转小写:LOWER()
   - 转大写：UPPER()
-  - 截空格：TRIM(),截左侧LTRIM(),截右侧LTRIM()
+  - 截空格：TRIM(),截左侧LTRIM(),截右侧RTRIM()
   - 截字符串：SUBSTRING(),oracel 为SUBSTR()，字符下标从1开始
   - 返回字符串的位置
   - 字符串替换: REPLACE(字符串,替换的字符,替换成的字符)
-  - 返回字符的ASCII码： ASCII(),得到字符是的ASCII码：CHAR()</br></br>
+  - 返回字符的ASCII码： ASCII(),得到字符传的ASCII码：CHAR()</br></br>
 
 3. 日期函数</br>
  date、time、dateTime、TimeStamp
