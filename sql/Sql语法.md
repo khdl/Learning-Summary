@@ -2,7 +2,7 @@
 
 ### 基础
 
-可变长度字符串大字段：clob  存储二进制文件：blob </br>
+可变长度字符串大字段：clob ， 存储二进制文件：blob </br>
 oracle 存储整数类型：  number(3,3) </br>
 外键创建:  foreign(字段名)  references 表名(字段名) (插入数据时，如果关联的主键数据不存在会报错)</br>
 表中添加列: alter table 表名 add  字段名  字段类型 </br>
@@ -34,7 +34,7 @@ where 1=1: 有这个过滤条件后数据库就无法使用索引等查询优化
 分组语句(group by)经常和聚合函数一起使用。没有出现在group by 后的列是不能出现在select后的(聚合函数除外)。group by 后跟多个字段指定多个分组规则。查询的结果是以最末一级的分组来进行输出的</br>
 having 对分组进行过滤，having语句中不能包含未分组的列名
 
-oracle定义表别名的时候不能使用as。
+oracle定义表别名的时候不能使用as。</br>
 sqlserver和oracel 支持窗口函数：ROW_NUMBER(): 用法ROW_NUMBER() OVER(规则)</br>
 oracle虽然支持ROW_NUMBER()，但提供了更方便的特性来计算行号。Oracle为每个结果集都增加了一个默认表示行号的列，这个列的名称为rownum。**注意rownum是结果集的行号**</br>
 
