@@ -42,7 +42,7 @@ Spring 4中增加了对jsonp的原生支持，只需要ControllerAdvice就可以
 supper("callback")指定的是url中callback：
 http://sso.isy.cn/logout?callback=successCallback
 
-controller中
+s
 controller中的代码正常编写就OK，不用修改任何东西。
 只要保证在cn.isy.web.sso.web包下即可！
 
