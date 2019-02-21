@@ -53,4 +53,4 @@ Update T_User set **age = age+1**</br>
 mysql和SqlServer允许使用不带from字句的select语句来查询不属于任何实体表的数据：select 1；还可以在不带from字句中使用函数</br>
 oracel不允许使用这种不带任何from字句的select语句，不过可以使用oracel的系统表来作为from字句中的表名，最常用的系统表为DUAl：select 1,LENGTH('abc')  from dual;</br>
 
-UNION去重了，UNION ALl 不去重
+UNION去重了，UNION ALL 不去重
