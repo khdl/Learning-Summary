@@ -81,3 +81,22 @@ Ext.js 条形图
 	      }]
 	      render, legend and other properties
 	});
+
+
+Panel类允许我们设置一个名为的属性 
+
+    //可折叠
+    collapsible: true,
+
+
+设置组件是否浮动
+
+    floating: true, // make this panel an absolutely-positioned floating component
+
+
+用来Ext.defer延迟触发自定义事件的功能。
+
+ Ext.apply(this, config):用来配置属性(新增、覆盖)。
+
+Ext JS 中config块中属性自动获得getter和setter方法。
+
