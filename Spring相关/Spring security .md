@@ -46,4 +46,39 @@ DelegatingFilterProxy：它并不实现真正的过滤，而是所有过滤器�
 调用实际的FilterChainProxy 的doFilterInternal()方法 去获取所有的拦截器并进行过滤处理
 
 
+    //获取当前用户信息（UserDetails）
+	Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+     SecurityContextHolder.getContext().getAuthentication().getName();
+
+
+
+认证过程：
+
+	用户使用用户名和密码进行登录。
+	Spring Security 将获取到的用户名和密码封装成一个实现了 Authentication 接口的 UsernamePasswordAuthenticationToken。
+	将上述产生的 token 对象传递给 AuthenticationManager 进行登录认证。
+	AuthenticationManager 认证成功后将会返回一个封装了用户权限等信息的 Authentication 对象。
+	通过调用 SecurityContextHolder.getContext().setAuthentication(...) 将 AuthenticationManager 返回的 Authentication 对象赋予给当前的 SecurityContext。
+
+上述介绍的就是 Spring Security 的认证过程。在认证成功后，用户就可以继续操作去访问其它受保护的资源了，但是在访问的时候将会使用保存在 SecurityContext 中的Authentication 对象进行相关的权限鉴定。
+
+
+在 request 之间共享 SecurityContext：实际就是把SecurityContext存放在session中
+
+
+拦截指定的url
+
+    <security:intercept-url pattern="/**" access="ROLE_USER"/>
+
+指定访问协议：requires-channel="https"
+
+定义多个http元素时要确保将更具有特性的URL配置在前
+
+
+
+
+
+
+
 
