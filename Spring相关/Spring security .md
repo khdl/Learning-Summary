@@ -76,7 +76,20 @@ DelegatingFilterProxy：它并不实现真正的过滤，而是所有过滤器�
 定义多个http元素时要确保将更具有特性的URL配置在前
 
 
+### Spring  security
 
+DelegatingFilterProxy是一个特殊的Servlet Filter，它本身所做的工作并不多。只是将工作委托给一个javax.servlet.Filter实现类。
+
+springSecurityFilterChain本身是另一个特殊的Filter，它也被称为FilterChainProxy。它可以链接任意一个或多个其他的Filter。
+
+roles()方法是authorities()方法的简写形式。roles()方法所给定的值都会添加一个“ROLE_”前缀，并将其作为权限授予给用户。
+
+PasswordEncoder密码转换接口，有内置实现，也可自定义实现。
+
+
+默认情况下，Spring Security的LDAP认证假设LDAP服务器监听本机的33389端口。用contextSource()方法来配置远程服务器的地址。
+
+UserDetailsService接口就oadUserByUsername()方法。这个方法返回的是UserDetails对象。
 
 
 
