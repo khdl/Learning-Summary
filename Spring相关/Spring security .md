@@ -89,7 +89,7 @@ PasswordEncoder密码转换接口，有内置实现，也可自定义实现。
 
 默认情况下，Spring Security的LDAP认证假设LDAP服务器监听本机的33389端口。用contextSource()方法来配置远程服务器的地址。
 
-UserDetailsService接口就oadUserByUsername()方法。这个方法返回的是UserDetails对象。
+UserDetailsService接口就loadUserByUsername()方法。这个方法返回的是UserDetails对象。
 
 
 
