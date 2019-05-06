@@ -49,7 +49,7 @@ sleep()方法属于Thread类中的,wait()方法属于Object类中的。在等待
 原子操作(atomic operation)是指不会被线程调度机制打断的操作,java中一般事务管理里面用到原子操作
 
 
-###  Java中的volatile关键是什么作用？怎样使用它？在Java中它跟synchronized方法有什么不同？
+###  Java中的volatile关键字是什么作用？怎样使用它？在Java中它跟synchronized方法有什么不同？
 
 volatile该关键字是主要使用的场合多线程读取共享变量的时候可以获取到最新的值使用。不能保障原子性
 

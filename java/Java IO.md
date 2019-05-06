@@ -64,16 +64,16 @@ Inputstream类中的常用方法
 
 OutputStream提供了3个write方法来做数据的输出，这个是和InputStream是相对应的。
 
-//将参数b中的字节写到输出流
-public void write(byte b[ ])
-//将参数b的从偏移量off开始的len个字节写到输出流
-public void write(byte b[ ], int off, int len) 
-//先将int转换为byte类型，把低字节写入到输出流中
-public abstract void write(int b) 
-//将数据缓冲区中数据全部输出，并清空缓冲区
-public void flush() 
-//关闭输出流并释放与流相关的系统资源
-public void close( )
+	//将参数b中的字节写到输出流
+	public void write(byte b[ ])
+	//将参数b的从偏移量off开始的len个字节写到输出流
+	public void write(byte b[ ], int off, int len) 
+	//先将int转换为byte类型，把低字节写入到输出流中
+	public abstract void write(int b) 
+	//将数据缓冲区中数据全部输出，并清空缓冲区
+	public void flush() 
+	//关闭输出流并释放与流相关的系统资源
+	public void close( )
 
 几种不同的OutputStream:
 
