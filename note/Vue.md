@@ -20,3 +20,6 @@ $watch()观察某个变量的变化
 
 
 访问根实例 $root   访问父级组件实例 $parent
+
+
+需要在 JavaScript 里直接访问一个子组件,可以通过 ref 这个 attribute 为子组件赋予一个 ID 引用
